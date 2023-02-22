@@ -1,0 +1,69 @@
+IOET Exercise
+
+Exercise to know what employees have been at the office within the same time frame.
+
+
+
+About the project
+
+
+The company ACME offers their employees the flexibility to work the hours they want. But due to some external circumstances they need to know what employees have been at the office within the same time frame.
+
+
+
+Built With
+
+Java
+
+
+Getting Started
+
+Execution Environment JRE: JavaSE-17
+
+
+Installation
+
+Clone the repo
+git clone https://github.com/rociocpoppe/ioet
+go to to Main.java and run the app
+
+Usage
+
+The text file in resources/employeesSchedule.txt has already have data added. However, you can modify it by entering to the folder and file mentioned.  
+
+Input: the name of an employee and the schedule they worked, indicating the time and hours. 
+Output: a table containing pairs of employees and how often they have coincided in the office.
+
+Example 1:
+
+INPUT
+RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00- 21:00
+ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00
+ANDRES=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00
+
+
+OUTPUT
+ASTRID-RENE: 2
+ASTRID-ANDRES: 3
+RENE-ANDRES: 2
+
+Example 2:
+
+INPUT:
+RENE=MO10:15-12:00,TU10:00-12:00,TH13:00-13:15,SA14:00-18:00,SU20:00-21:00
+ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00
+
+OUTPUT:
+RENE-ASTRID: 3
+
+
+Solution
+First of all, a reader was needed to process the data from the .txt file. This class provides the employees to the company, in which the employees are stored in a list. To compare their schedules, 
+a directed graph was implemented. Each employee was thought as a vertex, and the times the coincided were thought as arcs with values, which provide the data needed for the output. 
+
+
+Contact
+Rocío Celeste Poppe - rociocpoppe@gmail.com
+
+
+
