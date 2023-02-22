@@ -1,5 +1,8 @@
 package ioetexercise;
 
+import java.util.ArrayList;
+
+
 public class Main {
 
     public static void main (String [] args){
@@ -7,8 +10,15 @@ public class Main {
         String path="src/resources/employeesSchedule.txt";
         Reader reader=new Reader(path);
         Company company=reader.readContent();
-        for(Employee e: company.getEmployees()){
-            System.out.println(e);
+        DirectedGraph<?> graph=new DirectedGraph<>();
+        ArrayList<Employee>employees2=company.getEmployees();
+        for(int i=0; i<employees2.size(); i++){
+            Vertex v=new Vertex();
+            v.setVertex(employees2.get(i).getName());
+            graph.addVertex(v.getVertex());
         }
+        company.getSameSchedules(graph);
+   
+
     }
 }

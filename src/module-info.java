@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author rocio
+ * @author Rocio Poppe
  *
  */
 module ioetexercise {

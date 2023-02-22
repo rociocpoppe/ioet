@@ -2,7 +2,7 @@ package ioetexercise;
 
 import java.util.ArrayList;
 
-public class Employee {
+public class Employee{
 
     String name;
     ArrayList<String> timetable;
@@ -36,7 +36,17 @@ public class Employee {
     public String toString() {
         return "Employee [name=" + name + ", timetable=" + timetable + "]";
     }
-
+    
+    public ArrayList<String> getSameSchedule(Employee anotherEmployee) {
+        ArrayList<String> sameSchedule=new ArrayList<>();
+        for(String scheduleAnotherEmployee: anotherEmployee.getTimetable()){
+            if(this.getTimetable().contains(scheduleAnotherEmployee)){
+                sameSchedule.add(scheduleAnotherEmployee);
+            }
+        }
+        return sameSchedule;
+    }
+   
     
     
     
